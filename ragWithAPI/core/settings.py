@@ -12,10 +12,13 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Carregar variáveis de ambiente do arquivo .env
+load_dotenv(BASE_DIR / '.env')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
@@ -135,4 +138,11 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
+# Gemini API Key
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+
+# Validar se a chave foi carregada
+if not GEMINI_API_KEY:
+    print("⚠️  AVISO: GEMINI_API_KEY não foi encontrada no arquivo .env")
+else:
+    print(f"✅ GEMINI_API_KEY carregada: {GEMINI_API_KEY[:10]}...")

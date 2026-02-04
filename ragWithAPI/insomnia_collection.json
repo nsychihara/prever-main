@@ -1,0 +1,163 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2026-02-04T00:00:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "req_health_check",
+      "parentId": "fld_chatbot_prever",
+      "modified": 1707004800000,
+      "created": 1707004800000,
+      "url": "http://localhost:8000/api/chat/health/",
+      "name": "Health Check",
+      "description": "Verifica se a API está online",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1707004800000,
+      "_type": "request"
+    },
+    {
+      "_id": "req_chat_message",
+      "parentId": "fld_chatbot_prever",
+      "modified": 1707004800000,
+      "created": 1707004800000,
+      "url": "http://localhost:8000/api/chat/",
+      "name": "Enviar Mensagem",
+      "description": "Envia uma mensagem para o chatbot",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"mensagem\": \"Quais planos vocês têm disponíveis?\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1707004700000,
+      "_type": "request"
+    },
+    {
+      "_id": "req_chat_preco",
+      "parentId": "fld_chatbot_prever",
+      "modified": 1707004800000,
+      "created": 1707004800000,
+      "url": "http://localhost:8000/api/chat/",
+      "name": "Perguntar Preço",
+      "description": "Pergunta sobre valores dos planos",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"mensagem\": \"Qual o valor do plano básico?\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1707004600000,
+      "_type": "request"
+    },
+    {
+      "_id": "req_chat_cobertura",
+      "parentId": "fld_chatbot_prever",
+      "modified": 1707004800000,
+      "created": 1707004800000,
+      "url": "http://localhost:8000/api/chat/",
+      "name": "Perguntar Cobertura",
+      "description": "Pergunta sobre cobertura dos planos",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"mensagem\": \"O plano cobre consultas com especialistas?\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1707004500000,
+      "_type": "request"
+    },
+    {
+      "_id": "req_chat_erro_vazio",
+      "parentId": "fld_chatbot_prever",
+      "modified": 1707004800000,
+      "created": 1707004800000,
+      "url": "http://localhost:8000/api/chat/",
+      "name": "Teste Erro - Mensagem Vazia",
+      "description": "Testa validação de mensagem vazia",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"mensagem\": \"\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1707004400000,
+      "_type": "request"
+    },
+    {
+      "_id": "req_chat_erro_sem_campo",
+      "parentId": "fld_chatbot_prever",
+      "modified": 1707004800000,
+      "created": 1707004800000,
+      "url": "http://localhost:8000/api/chat/",
+      "name": "Teste Erro - Sem Campo",
+      "description": "Testa validação sem o campo mensagem",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"texto\": \"teste\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1707004300000,
+      "_type": "request"
+    },
+    {
+      "_id": "fld_chatbot_prever",
+      "parentId": "wrk_main",
+      "modified": 1707004800000,
+      "created": 1707004800000,
+      "name": "Chatbot Prever API",
+      "description": "Coleção de requisições para testar o chatbot",
+      "environment": {},
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_main",
+      "parentId": null,
+      "modified": 1707004800000,
+      "created": 1707004800000,
+      "name": "Prever Main",
+      "description": "",
+      "_type": "workspace"
+    }
+  ]
+}
